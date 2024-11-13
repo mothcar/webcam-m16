@@ -4,24 +4,20 @@ import "./App.css";
 
 function App() {
   const [mirror, setMirror] = useState(true);
-  const [face, setFace] = useState({facingMode: "user" });
+  const [face, setFace] = useState({ facingMode: "user" });
 
   const clickHandler = () => {
     setMirror(!mirror);
   };
   const frontkHandler = () => {
-    setFace(!mirror);
-  };
-
-  const videoConstraints = () => {
-    if(face == "user") setFace({facingMode: { exact: "environment" }})
-    else setFace({facingMode: "user" })
+    if (face == "user") setFace({ facingMode: { exact: "environment" } });
+    else setFace({ facingMode: "user" });
   };
 
   return (
     <>
       <div className="webcamCapture">
-        <Webcam mirrored={mirror} videoConstraints={face} className="mycam"/>
+        <Webcam mirrored={mirror} videoConstraints={face} className="mycam" />
       </div>
       <button onClick={clickHandler}>반전</button>
       <button onClick={frontkHandler}>앞뒤</button>
