@@ -9,6 +9,7 @@ function App() {
     <>
       <div>
         <Webcam />
+        <canvas style={{opacity:0}} />
       </div>
       <h1>Vite + React</h1>
       <div className="card"></div>
