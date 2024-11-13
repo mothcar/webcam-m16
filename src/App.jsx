@@ -3,18 +3,28 @@ import Webcam from "react-webcam";
 import "./App.css";
 
 function App() {
-  const [face, setFace] = useState(true);
+  const [mirror, setMirror] = useState(true);
+  const [face, setFace] = useState({facingMode: "user" });
 
   const clickHandler = () => {
-    setFace(!face);
+    setMirror(!mirror);
+  };
+  const frontkHandler = () => {
+    setFace(!mirror);
+  };
+
+  const videoConstraints = () => {
+    if(face == "user") setFace({facingMode: { exact: "environment" }})
+    else setFace({facingMode: "user" })
   };
 
   return (
     <>
       <div className="webcamCapture">
-        <Webcam mirrored={face} className="mycam"/>
+        <Webcam mirrored={mirror} videoConstraints={face} className="mycam"/>
       </div>
       <button onClick={clickHandler}>반전</button>
+      <button onClick={frontkHandler}>앞뒤</button>
       <h1>Vite + React</h1>
       <div className="card"></div>
       <p className="read-the-docs">
