@@ -10,7 +10,7 @@ function App() {
     setMirror(!mirror);
   };
   const frontkHandler = () => {
-    if (face == "user") setFace({ facingMode: { exact: "environment" } });
+    if (face == { facingMode: "user" }) setFace({ facingMode: { exact: "environment" } });
     else setFace({ facingMode: "user" });
   };
 
