@@ -10,7 +10,8 @@ function App() {
     setMirror(!mirror);
   };
   const frontkHandler = () => {
-    if (face == { facingMode: "user" }) setFace({ facingMode: { exact: "environment" } });
+    if (JSON.stringify(face) === JSON.stringify({ facingMode: "user" }))
+      setFace({ facingMode: { exact: "environment" } });
     else setFace({ facingMode: "user" });
   };
 
