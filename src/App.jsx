@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div className="webcamCapture">
-        <Webcam className="flex card" />
+        <Webcam />
       </div>
       <h1>Vite + React</h1>
       <div className="card"></div>
